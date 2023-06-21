@@ -30,7 +30,7 @@ contract JustButtons is ERC721, Ownable, ReentrancyGuard {
   error InvalidSignature();
   error WrongPrice(uint256 correctPrice);
 
-  constructor(uint256[] memory mintFees) ERC721("JUST BUTTONS", "JBTN") {
+  constructor(uint256[] memory mintFees) ERC721("JUST BUTTONS", "JBTN") Ownable() {
 
     for (uint8 i; i < 5; i++) {
       _mintFees[i+1] = mintFees[i];
